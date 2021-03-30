@@ -6,6 +6,7 @@
 /conf
 /docker
 docker-compose.yml
+/.idea
 .env
 .env.backup
 .phpunit.result.cache
