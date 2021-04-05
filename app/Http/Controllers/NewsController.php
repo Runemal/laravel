@@ -6,11 +6,6 @@ namespace App\Http\Controllers;
 
 class NewsController extends Controller
 {
-    private $newsCategorys = [
-        '1' => 'Category 1',
-        '2' => 'Category 2',
-        '3' => 'Category 3',
-    ];
 
     private $news = [
         1 => [
