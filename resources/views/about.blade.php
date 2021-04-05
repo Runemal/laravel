@@ -8,7 +8,7 @@
     <title>About</title>
 </head>
 <body>
-<menu><a href="/">Главная</a><a href="/about">О нас</a><a href="/news">Новости</a><a href="/contacts">Контакты</a></menu>
+<menu><a href="/">Главная</a><a href="/about">О нас</a><a href="/news">Новости</a><a href="/auth">Авторизация</a></menu>
 <h1>This is my first laravel`s app! See you soon!</h1>
 </body>
 </html>

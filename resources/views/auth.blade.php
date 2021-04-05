@@ -5,10 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>News</title>
 </head>
 <body>
 <menu><a href="/">Главная</a><a href="/about">О нас</a><a href="/news">Новости</a><a href="/auth">Авторизация</a></menu>
-<h1>Hello, my dear guest!</h1>
+<h1>Auth</h1>
 </body>
 </html>

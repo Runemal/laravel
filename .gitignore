@@ -7,6 +7,7 @@
 /docker
 docker-compose.yml
 /.idea
+.idea
 .env
 .env.backup
 .phpunit.result.cache
