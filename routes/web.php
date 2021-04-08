@@ -1,9 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
-use App\Http\Controllers\NewsController;
-use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +12,9 @@ use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 */
 
 /* Index*/
+
+use App\Http\Controllers\NewsController;
+
 Route::get('/', function () {
     return view('home');
 });

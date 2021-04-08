@@ -6,7 +6,6 @@ namespace App\Http\Controllers;
 
 class NewsController extends Controller
 {
-
     private $news = [
         1 => [
             '1' => 'This is news 1 text.',
@@ -24,19 +23,9 @@ class NewsController extends Controller
             '3' => 'This is news 3 text.',
         ]
     ];
-
-
     public function index()
     {
-//        foreach ($this->news as $id => $item) {
-//            $url = route('news::card', ['id' => $id]);
-//            echo "<div>
-//                    <a href='$url'>
-//                        {$item['title']}
-//                   </a>
-//                  </div>";
-//        }
-//        echo "this is main page";
+
         return view ('news')->with(['id' => '', 'newsCart' => '', 'news' => $this->news]);
         exit;
     }
