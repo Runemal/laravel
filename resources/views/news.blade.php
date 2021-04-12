@@ -1,5 +1,9 @@
 @include('blocks.header')
 
+@section('title')
+    News
+@endsection
+
 @if ($newsCart)
     <h1>News {{$cart}} Category {{$id}}</h1>
     {{$newsCart}}
