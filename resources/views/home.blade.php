@@ -1,14 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-</head>
-<body>
-<menu><a href="/">Главная</a><a href="/about">О нас</a><a href="/news">Новости</a><a href="/contacts">Контакты</a></menu>
+@include('blocks.header')
+
+@section('title')
+    @parent
+    Home
+@endsection
+
 <h1>Hello, my dear guest!</h1>
-</body>
-</html>
+
+@include('blocks.footer')
