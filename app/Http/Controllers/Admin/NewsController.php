@@ -17,9 +17,7 @@ class NewsController extends Controller
     public function create()
     {
 
-        dd(route('admin::news::create'));
-        echo "create";
-        exit;
+        return view('admin.news/create');
     }
 
     public function update()
@@ -32,8 +30,17 @@ class NewsController extends Controller
 
     }
 
-    public function show()
+    public function show(Request $request)
     {
+
+            echo "<script>alert('Данные получены!')</script>";
+
+//            dd($request);
+//            return redirect()->route('admin::news::create');
+            $id = 'FormNews';
+            $cart = $request->input('title');
+            $newsCart = $request->input('content');
+            return view ('news')->with(['id' => $id, 'cart' => $cart, 'newsCart' => $newsCart]);
 
     }
 }

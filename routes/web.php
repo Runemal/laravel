@@ -14,6 +14,7 @@
 /* Index*/
 
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 
 Route::get('/', function () {
     return view('home');
@@ -22,7 +23,6 @@ Route::get('/', function () {
 /*News router*/
 Route::get('/news', [NewsController::class, 'index'])
     ->name("news::catalog");
-//Route::get('/news', '\App\Http\Controllers\NewsController@index');
 Route::get('/news/{id}', [NewsController::class, 'category'])
     ->where('id', '[0-9]+')
     ->name('news::category');
@@ -40,10 +40,12 @@ Route::group([
         ->name('index');
     Route::get('/create',[AdminNewsController::class, 'create'])
         ->name('create');
-    Route::get('/update',[AdminNewsController::class, 'update'])
+    Route::get( '/update',[AdminNewsController::class, 'update'])
         ->name('update');
     Route::get('/delete',[AdminNewsController::class, 'delete'])
         ->name('delete');
+    Route::post('/show',[AdminNewsController::class, 'show'])
+        ->name('show');
 });
 
 /*Other pages*/
