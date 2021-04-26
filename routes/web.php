@@ -56,3 +56,4 @@ Route::get('/auth', function () {
 Route::get('/about', function () {
     return view('about');
 });
+Route::get('/db', [\App\Http\Controllers\DBController::class, 'index']);
