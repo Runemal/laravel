@@ -12,7 +12,7 @@
     @foreach ($news as $idNews => $titleNews)
 
         <div>
-            <a href='/news/{{$id}}/{{$idNews}}'>News {{$idNews}}</a>
+            <a href='/news/{{$id}}/{{$idNews}}'>News {{$titleNews->title}}</a>
         </div>
 
     @endforeach
@@ -22,7 +22,7 @@
     @foreach ($news as $id => $title)
 
         <div>
-            <a href='news/{{$id}}'>Category {{$id}}</a>
+            <a href='news/{{$id}}'>Category {{$title->name}}</a>
         </div>
 
     @endforeach
