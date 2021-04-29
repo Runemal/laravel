@@ -1,9 +1,9 @@
 @include('blocks.header')
 
 @section('title')
-    About
+    Auth
 @endsection
 
-<h1>This is my first laravel`s app! See you soon!</h1>
+<h1>Auth</h1>
 
 @include('blocks.footer')
