@@ -8,11 +8,10 @@
     <h1>News {{$cart}} Category {{$id}}</h1>
     {{$newsCart}}
 @elseif ($id)
-    <h1>News Category {{$id}}</h1>
+    <h1>News Category {{$categoryName}}</h1>
     @foreach ($news as $idNews => $titleNews)
-
         <div>
-            <a href='/news/{{$id}}/{{$idNews}}'>News {{$titleNews->title}}</a>
+            <a href='/news/{{$id}}/{{$titleNews->id}}'>News {{$titleNews->title}}</a>
         </div>
 
     @endforeach
@@ -22,7 +21,7 @@
     @foreach ($news as $id => $title)
 
         <div>
-            <a href='news/{{$id}}'>Category {{$title->name}}</a>
+            <a href='news/{{$title->id}}'>Category {{$title->name}}</a>
         </div>
 
     @endforeach
