@@ -4,63 +4,44 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Category;
+use App\Models\News;
+use function Swoole\Coroutine\Http\get;
+
 class NewsController extends Controller
 {
-    private $news = [];
-
 
     public function index()
     {
-
-        $this->news = \DB::table('category')
+        $news = Category::query()
             ->select( 'id', 'name')
             ->get();
 
-//        dd($this->news);
-
-        return view ('news')->with(['id' => '', 'newsCart' => '', 'news' => $this->news]);
-        exit;
+        return view ('news')->with(['id' => '', 'newsCart' => '', 'news' => $news]);
     }
 
     public function category($id)
     {
-//        $news = $this->news[$id];
 
-        $this->news = \DB::table('news')
-            ->where('category', '=', $id)
-            ->Join('category', 'news.category', '=', 'category.id')
-//            ->Join('status','status', '=', 'status.id')
-            ->select('news.id', 'title', 'category.name')
-
+        $news = News::query()
+            ->where('category', $id)
+            ->join('category', 'news.category', '=', 'category.id')
+            ->select('news.id','title', 'name')
             ->get();
 
-//        dd($this->news);
+        return view ('news')->with(['newsCart' => '', 'id' => $id, 'news' => $news, 'categoryName' => $news[0]->name]);
 
-//        echo $news['title'];
-        return view ('news')->with(['newsCart' => '', 'id' => $id, 'news' => $this->news, 'categoryName' => $this->news[0]->name]);
-
-        exit;
     }
     public function cart($id, $cart)
     {
-//        $newsCart = $this->news[$id][$cart];
 
-        $this->news = \DB::table('news')
-            ->where(
-                'news.id', '=', $cart
-            )
+        $news = News::query()
+            ->where('news.id', '=', $cart)
             ->Join('category', 'news.category', '=', 'category.id')
-//            ->Join('status','status', '=', 'status.id')
-
-            ->select()
-
             ->get();
 
-//        dd($this->news);
+        return view ('news')->with(['id' => $news[0]->name, 'cart' => $news[0]->title, 'newsCart' => $news[0]->description]);
 
-        return view ('news')->with(['id' => $this->news[0]->name, 'cart' => $this->news[0]->title, 'newsCart' => $this->news[0]->description]);
-
-        exit;
     }
 
 }

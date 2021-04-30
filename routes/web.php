@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-/*News router*/
+/*NewsOld router*/
 Route::get('/news', [NewsController::class, 'index'])
     ->name("news::catalog");
 Route::get('/news/{id}', [NewsController::class, 'category'])
