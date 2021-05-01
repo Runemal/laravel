@@ -23,4 +23,16 @@ class Category extends Model
         'id',
         'name',
     ];
+
+    public function getAllNewsCategories(){
+        return static::query()
+            ->select( 'id', 'name')
+            ->get();
+    }
+
+    public function news(){
+
+        return $this->hasMany(News::class);
+
+    }
 }

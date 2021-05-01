@@ -42,4 +42,35 @@ class News extends Model
         'category',
         'status',
     ];
+
+
+    /**
+     * @param int $id
+     * @return News[]|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Query\Builder[]|\Illuminate\Support\Collection
+     */
+    public function getNewsByCategoryId(int $id){
+        return static::query()
+            ->where('category', $id)
+            ->join('category', 'news.category', '=', 'category.id')
+            ->select('news.id','title', 'name')
+            ->get();
+    }
+
+    /**
+     * @param int $cart
+     * @return News[]|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Query\Builder[]|\Illuminate\Support\Collection
+     */
+    public function getNewsById (int $cart){
+        return static::query()
+            ->where('news.id', '=', $cart)
+            ->Join('category', 'news.category', '=', 'category.id')
+            ->select('title', 'description', 'name')
+            ->get();
+    }
+
+    public function category(){
+
+        return $this->belongsTo(Category::class);
+
+    }
 }
