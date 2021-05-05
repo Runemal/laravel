@@ -13,6 +13,7 @@
 
 /* Index*/
 
+use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 
@@ -62,6 +63,14 @@ Route::get('/about', function () {
 
 //Route::get('/db', [\App\Http\Controllers\DBController::class, 'index']);
 
-Auth::routes();
+Route::match(['get', 'post'], '/admin/profile', [ProfileController::class, 'update'])
+    ->name('admin:profile')
+    ->middleware('auth');
+
+Route::get('/locale/{lang}', [LocaleController::class, 'index'])
+    ->where('lang','\w+')
+    ->name('locale');
+
+Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
