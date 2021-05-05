@@ -41,6 +41,9 @@ class News extends Model
         'source',
         'category',
         'status',
+        'publish_date',
+        'created_at',
+        'updated_at',
     ];
 
 

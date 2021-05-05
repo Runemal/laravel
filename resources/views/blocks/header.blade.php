@@ -10,6 +10,6 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
-<menu><a href="/">Главная</a><a href="/about">О нас</a><a href="/news">Новости</a><a href="/auth">Авторизация</a></menu>
+<menu><a href="/">{{ __('labels.index_page') }}</a><a href="/about">{{ __('labels.about_page') }}</a><a href="/news">{{ __('labels.news_page') }}</a><a href="/admin/news">{{ __('labels.admin_news_page') }}</a></menu>
 <hr>
 

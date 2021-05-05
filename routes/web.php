@@ -40,9 +40,11 @@ Route::group([
         ->name('index');
     Route::get('/create',[AdminNewsController::class, 'create'])
         ->name('create');
-    Route::get( '/update',[AdminNewsController::class, 'update'])
+    Route::get( '/update/{id}',[AdminNewsController::class, 'update'])
+        ->where('id', '[0-9]+')
         ->name('update');
-    Route::get('/delete',[AdminNewsController::class, 'delete'])
+    Route::get('/delete/{id}',[AdminNewsController::class, 'delete'])
+        ->where('id', '[0-9]+')
         ->name('delete');
     Route::post('/show',[AdminNewsController::class, 'show'])
         ->name('show');
@@ -50,10 +52,16 @@ Route::group([
 
 /*Other pages*/
 
-Route::get('/auth', function () {
-    return view('auth');
-});
+//Route::get('/auth', function () {
+//    return view('auth');
+//});
+
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/db', [\App\Http\Controllers\DBController::class, 'index']);
+
+//Route::get('/db', [\App\Http\Controllers\DBController::class, 'index']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -1,0 +1,21 @@
+<?php
+return [
+    'news_title' => 'Title',
+    'news_description' => 'Description',
+    'news_category' => 'Category',
+    'news_active' => 'Active',
+    'news_publish_date' => 'Publish date',
+    'news_save' => 'Save',
+    'data_saved' => 'Data saved!',
+    'admin_news_create' => 'Admin News Create',
+    'admin_news_create_btn' => 'Create News',
+    'admin_news_create_txt' => 'News',
+    'news_category_txt' => 'Category',
+    'news_edit_btn' => 'Edit News',
+    'news_del_btn' => 'Delete',
+    'news_nothing_txt' => 'The News are out there! O-o',
+    'index_page' => 'Index',
+    'about_page' => 'About us',
+    'news_page' => 'News',
+    'admin_news_page' => 'Admin Panel',
+];
