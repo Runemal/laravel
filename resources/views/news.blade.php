@@ -1,9 +1,11 @@
-@include('blocks.header')
+{{--@include('blocks.header')--}}
+@extends('layouts.app')
 
 @section('title')
     News
 @endsection
 
+@section('content')
 @if ($newsCart)
     <h1>News {{$cart}} Category {{$id}}</h1>
     {{$newsCart}}
@@ -27,4 +29,7 @@
     @endforeach
 @endif
 
+
 @include('blocks.footer')
+
+@endsection

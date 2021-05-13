@@ -2,8 +2,10 @@
     /** @var \App\Models\Category[] $category */
 @endphp
 
-@include('blocks.header')
+{{--@include('blocks.header')--}}
+@extends('layouts.app')
 
+@section('content')
 
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -61,3 +63,4 @@
 
 
 @include('blocks.footer')
+@endsection

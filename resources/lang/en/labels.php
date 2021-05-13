@@ -17,5 +17,5 @@ return [
     'index_page' => 'Index',
     'about_page' => 'About us',
     'news_page' => 'News',
-    'admin_news_page' => 'Admin Panel',
+    'admin_news_page' => 'News Panel',
 ];

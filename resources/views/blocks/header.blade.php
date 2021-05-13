@@ -13,19 +13,28 @@
 
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'My first Laravel`s App!') }}
-        </a>
+{{--        <a class="navbar-brand" href="{{ url('/') }}">--}}
+{{--            {{ config('app.name', 'Laravel') }}--}}
+{{--        </a>--}}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <a href="/">{{ __('labels.index_page') }}</a><a href="/about">{{ __('labels.about_page') }}</a><a href="/news">{{ __('labels.news_page') }}</a><a href="/admin/news">{{ __('labels.admin_news_page') }}</a>
+
+
+
         <li class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
+
+                <a class="navbar-brand nav-link mr-auto" href="/">{{ __('labels.index_page') }}</a>
+
+                <a class="navbar-brand nav-link mr-auto" href="/about">{{ __('labels.about_page') }}</a>
+
+                <a class="navbar-brand nav-link mr-auto" href="/news">{{ __('labels.news_page') }}</a>
+
 
             </ul>
 
@@ -66,6 +75,11 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                            <a class="dropdown-item" href="/admin/news">{{ __('labels.admin_news_page') }}</a>
+
+                            <a class="dropdown-item" href="/admin/profile">Profile</a>
+
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                       document.getElementById('logout-form').submit();">

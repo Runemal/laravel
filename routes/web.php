@@ -13,6 +13,7 @@
 
 /* Index*/
 
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
@@ -36,6 +37,7 @@ Route::get('/news/{id}/{cart}', [NewsController::class, 'cart'])
 Route::group([
     'prefix' => '/admin/news',
     'as' => 'admin::news::',
+    'middleware' => ['auth'],
 ], function () {
     Route::get('/', [AdminNewsController::class, 'index'] )
         ->name('index');
@@ -74,3 +76,4 @@ Route::get('/locale/{lang}', [LocaleController::class, 'index'])
 Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
