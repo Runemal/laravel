@@ -1,0 +1,21 @@
+<?php
+return [
+    'news_title' => 'Заголовок',
+    'news_description' => 'Сообщение',
+    'news_category' => 'Категория',
+    'news_active' => 'Активно',
+    'news_publish_date' => 'Дата публикации',
+    'news_save' => 'Сохранить',
+    'data_saved' => 'Данные записаны!',
+    'admin_news_create' => 'Админ: Создание новости',
+    'admin_news_create_btn' => 'Создать новость',
+    'admin_news_create_txt' => 'Новости',
+    'news_category_txt' => 'Категория',
+    'news_edit_btn' => 'Изменить',
+    'news_del_btn' => 'Удалить',
+    'news_nothing_txt' => 'Новости где-то рядом! O-o',
+    'index_page' => 'Главная',
+    'about_page' => 'О нас',
+    'news_page' => 'Новости',
+    'admin_news_page' => 'Новости',
+];
