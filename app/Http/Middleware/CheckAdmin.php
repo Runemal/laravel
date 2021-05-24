@@ -6,12 +6,14 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Abilities;
 
 class CheckAdmin
 {
     public function handle(Request $request, Closure $next)
     {
-        if(!Auth::user()->is_admin){
+//        if(!Auth::user()->is_admin){
+        if(\Gate::denies(Abilities::IS_ADMIN)) {
             return redirect()->route('home');
         }
         return $next($request);
