@@ -3,9 +3,6 @@
 /public/storage
 /storage/*.key
 /vendor
-/conf
-/docker
-docker-compose.yml
 .env
 .env.backup
 .phpunit.result.cache
