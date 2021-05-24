@@ -1,14 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About</title>
-</head>
-<body>
-<menu><a href="/">Главная</a><a href="/about">О нас</a><a href="/news">Новости</a><a href="/contacts">Контакты</a></menu>
+{{--@include('blocks.header')--}}
+@extends('layouts.app')
+@section('title')
+    About
+@endsection
+@section('content')
 <h1>This is my first laravel`s app! See you soon!</h1>
-</body>
-</html>
+
+@include('blocks.footer')
+@endsection
