@@ -17,6 +17,8 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
+use App\Http\Controllers\Admin\ParserController;
+use App\Http\Controllers\SocialController;
 
 Route::get('/', function () {
     return view('home');
@@ -55,15 +57,11 @@ Route::group([
 
 /*Other pages*/
 
-//Route::get('/auth', function () {
-//    return view('auth');
-//});
 
 Route::get('/about', function () {
     return view('about');
 });
 
-//Route::get('/db', [\App\Http\Controllers\DBController::class, 'index']);
 
 Route::match(['get', 'post'], '/admin/profile', [ProfileController::class, 'update'])
     ->name('admin:profile')
@@ -77,3 +75,22 @@ Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::group([
+    'prefix' => 'profile',
+    'as' => 'profile::',
+], function () {
+    Route::post('update', 'ProfileController@update',
+    )->name('update');
+
+    Route::get('show', 'ProfileController@show',
+    )->name('show');
+});
+
+Route::get("parser", [ParserController::class, 'index'])
+    ->name('parser');
+
+//?
+Route::get('/login', [SocialController::class, 'loginVk'])
+    ->name('login-vk');
+Route::get('/response', [SocialController::class, 'responseVk'])
+    ->name('response-vk');
